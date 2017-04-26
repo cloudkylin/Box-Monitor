@@ -72,7 +72,7 @@
         //定义变量
     	$list = getdata($ip);
     	$name = $list['name'];
-    	$free_space = $list['free']
+    	$free_space = $list['free'];
     
     	//改变头
     	echo '<div class="panel-heading">
@@ -89,7 +89,7 @@
     	//显示内容
     	echo '<div class="col-md-3">';
     	echo
-    '<img src="hdicon.png" height="150" width="150" class="center-block img-responsive img-rounded">'
+    '<img src="http://detect-10000037.image.myqcloud.com/86b6c4c9-f556-45c2-8a25-0051b27dd56d" height="150" width="150" class="center-block img-responsive img-rounded">'
     									       ;
     	echo '</div>
     	<div class="col-md-9">';
