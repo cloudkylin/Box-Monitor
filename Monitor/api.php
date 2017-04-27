@@ -7,12 +7,6 @@
     	    exit();
     	}
     	return $list;
-    	
-    	//定义变量
-    	$name = $list['name'];
-    	$first_report_time = $list['first'];
-    	$latest_report_time = $list['latest'];
-    	$free_space = $list['free'];
     }
 
     if (empty($ip)) {$ip = $_GET['ip'];}
@@ -39,6 +33,7 @@
     	$name = $list['name'];
     	$first_report_time = $list['first'];
     	$latest_report_time = $list['latest'];
+    	$free_space = $list['free'];
     
     	//改变头
     	echo '<div class="panel-heading">
