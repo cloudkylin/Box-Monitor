@@ -39,10 +39,11 @@
         <?php
          date_default_timezone_set("Etc/GMT-8");
          $time_tab = @json_decode(@file_get_contents('data/time.txt'), true);
+         $name_tab = @json_decode(@file_get_contents('data/name.txt'), true);
          if (!$time_tab) {$time_tab = array();}
          foreach ($time_tab as $key => $value) {
           echo '<tr>';
-          echo '<td><a href="detal.php?ip='.$key.'">'.$key.'</a></td>';
+          echo '<td><a href="detal.php?ip='.$key.'">'.$name_tab[$key].'</a></td>';
           echo '<td>'.$value.'</td>';
           $date = floor((strtotime("now") - strtotime($value))/86400);
            if( $date > 1 ){
