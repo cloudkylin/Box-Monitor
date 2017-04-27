@@ -27,9 +27,9 @@
     
     //获取POST内容
     //判断是否是盒子
-    #if(empty($_POST)){
-    #    exit();
-    #}
+    if(empty($_POST)){
+        exit();
+    }
     
     //获取剩余空间
     $free = $_POST['free'];
@@ -62,6 +62,7 @@
     
     //更新IP详细信息
     if(!file_exists('data/' . $IP . '.txt')){
+        //更新IP固定信息
         touch('data/' . $IP . '.txt');
         $first = array(
             'name' => $IP,
@@ -69,6 +70,13 @@
             'latest' => $time
             );
         file_put_contents('data/' . $IP . '.txt', json_encode($first));
+        
+        //更新name表
+        $name_tab = @json_decode(@file_get_contents('data/name.txt'), true);
+        if (!$name_tab) {$name_tab = array();}
+        $new_name_tab = array($IP => $IP);
+        $name_tab = array_replace($name_tab,$new_name_tab);
+        file_put_contents('data/name.txt', json_encode($name_tab));
     }
     $all_msg = json_decode(file_get_contents('data/' . $IP . '.txt'), true);
     $update = array(
