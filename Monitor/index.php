@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbar-ex-collapse">
      <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href="index.php">所有盒子</a></li>
-      <li><a href="clear.php">运行整理</a></li>
+      <li><a href="clean.php">运行整理</a></li>
      </ul>
     </div>
    </div>
