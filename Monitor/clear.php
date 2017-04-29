@@ -51,13 +51,16 @@
             }
             
             //清除并报告超时盒子
+            $name_tab = @json_decode(@file_get_contents('data/name.txt'), true);
             echo '<h2>以下盒子因超过20天未报告状态，已被清除列表</h2><hr />';
             foreach($timeout as $value){
-                @unset($time_tab[$value]);
+                unset($time_tab[$value]);
+                unset($name_tab[$value]);
                 @unlink('data/'.$value.'.txt');
                 echo '<p>'.$value.'</p>';
             }
             file_put_contents('data/time.txt', json_encode($time_tab));
+            file_put_contents('data/name.txt', json_encode($name_tab));
         ?>
      </div>
     </div>
