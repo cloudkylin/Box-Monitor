@@ -109,7 +109,7 @@
     	}
     } elseif ($tab == 'manage') {
     	//定义变量
-    	$list = getdata('$ip');
+    	$list = getdata($ip);
     	$name = $list['name'];
     	$passwd = $list['passwd'];
     
