@@ -181,7 +181,7 @@
     			<div class="modal-footer">
     				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
     				</button>
-    				<a href="http://182.254.210.194/box/detal.php?ip=' . $ip . '" class="btn btn-primary">
+    				<a href="detal.php?ip=' . $ip . '" class="btn btn-primary">
     					重新加载
     				</a>
     			</div>
