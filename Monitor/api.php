@@ -135,59 +135,57 @@
     	//主要内容
     	echo '<h2>' . $name . '
     
-    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    	设置
-    </button></h2>
-    <!-- 模态框（Modal） -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    	<div class="modal-dialog">
-    		<div class="modal-content">
-    			<div class="modal-header">
-    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-    					&times;
-    				</button>
-    				<h4 class="modal-title" id="myModalLabel">
-    					设置盒子 - ' . $ip . '
-    				</h4>
-    			</div>
-    			<div class="modal-body">
-    <script>
-    $.validator.setDefaults({
-        submitHandler: function() {
-          alert("设置成功!");
-        }
-    });
-    $().ready(function() {
-        $("#form").validate();
-    });
-    </script>
-    
-    				<form method="post" class="cmxform" id="form" action="note.php">
-      <fieldset>
-    
-    <input type="hidden"  name="ip" value="' . $ip . '" >
-          <label for="note">备注</label>
-          <input id="note" name="note" value="' . $note . '" required>
-        </p>
-        <p>
-          <label for="password">密码</label>
-          <input id="password" type="password" name="password">
-        </p>
-        <p>
-          <input class="submit" type="submit" value="提交">
-      </fieldset>
-    </form>
-    			</div>
-    			<div class="modal-footer">
-    				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-    				</button>
-    				<a href="detal.php?ip=' . $ip . '" class="btn btn-primary">
-    					重新加载
-    				</a>
-    			</div>
-    		</div><!-- /.modal-content -->
-    	</div><!-- /.modal -->
-    </div>';
+        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">设置</button></h2>
+        
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        	<div class="modal-dialog">
+        		<div class="modal-content">
+        			<div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        				<h4 class="modal-title" id="myModalLabel">
+        					设置盒子 - ' . $ip . '
+        				</h4>
+        			</div>
+        			
+        			<form method="post" class="cmxform" id="form" action="note.php">
+            			<div class="modal-body">
+            			
+                            <script>
+                            $.validator.setDefaults({
+                                submitHandler: function() {
+                                  alert("设置成功!");
+                                }
+                            });
+                            $().ready(function() {
+                                $("#form").validate();
+                            });
+                            </script>
+                            
+                            <fieldset>
+                                <input type="hidden"  name="ip" value="' . $ip . '" >
+                                <p>
+                                  <label for="note">备注</label>
+                                  <input id="note" name="note" value="' . $note . '" required>
+                                </p>
+                                <p>
+                                  <label for="password">密码</label>
+                                  <input id="password" type="password" name="password">
+                                </p>
+                            </fieldset>
+            			</div>
+            			
+            			<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+            				</button>
+            				<button type="submit" class="btn btn-primary">
+            					提交
+            				</button>
+            			</div>
+            	    </form>
+        		</div><!-- /.modal-content -->
+        	</div><!-- /.modal -->
+        </div>';
     
     	echo '<p>创建时间：' . $list['first'] . '</p>';
     
