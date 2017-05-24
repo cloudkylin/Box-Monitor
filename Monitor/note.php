@@ -1,6 +1,10 @@
 <!doctype html>
 <html><head>
 <?php
+        if(empty($_POST)||empty($_GET)){
+            header('Location:index.php');
+            exit();
+        }
         $ip = $_POST['ip'];
         $note = $_POST['note'];
         $passwd = $_POST['password'];

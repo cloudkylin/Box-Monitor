@@ -29,6 +29,10 @@
      <div class="col-md-12">
       <div class="panel panel-default" id="detaltab">
        <?php 
+        if(empty($_GET)){
+         header('Location:index.php');
+         exit();
+        }
         $ip = $_GET['ip'];
         include 'api.php';
            
